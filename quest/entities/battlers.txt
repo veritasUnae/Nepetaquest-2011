@@ -1,0 +1,64 @@
+ent {
+	id:			001
+	name:		nepeta
+	hp:			100
+	text:		5F841E
+	display:	Nepeta
+	attack {
+		id:			0
+		name:		Claw
+		power:		4
+		accuracy:	90
+		pen:		4
+	}
+
+	special {
+		name:		rp
+		Display:	Roleplay
+	}
+}
+ent{
+	id:			002
+	name:		karkat
+	hp:			100
+	text:		626262
+	display:	Karkat
+	attack {
+		id:			0
+		name:		Reap
+		power:		3
+		accuracy:	95
+		pen:		5
+	}
+
+	special {
+		name:		raeg
+		display:	Rage
+	}
+}
+
+ent {
+	id:			199
+	name:		crabdad
+	hp:			200
+	display:	Lusus Cancerus
+	attack {
+		id:			0
+		name:		Doof
+		power:		10
+		accuracy:	70
+		pen:		2
+	}
+
+	attack {
+		name:		2x Doof
+		target:		all
+	}	
+}
+#001:karkat:100:12:90:Karkat:626262:Raeg:
+#002:equius:100:40:20:Equius:5167D8:STONGJUMP:
+#003:gamzee:100:18:70:Gamzee:8C48BE:MiRaClE:
+#004:eridan:100:12:90:Eridan:BC3BBC:Improvvise:
+#005:vriska:100:13:88:Vriska:2A7FD4:Steal:
+#010:robot1:50:5:95:NepetaBot:626262:Derp:
+#199:crabdad:150:20:80:Crabdad:626262:Derp:

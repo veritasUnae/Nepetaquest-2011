@@ -1,0 +1,11 @@
+./
+crabdad/
+robot1/
+eridan/
+nepeta/
+gamzee/
+karkat/
+equius/
+vriska/
+index.txt
+Thumbs.db

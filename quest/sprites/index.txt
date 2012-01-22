@@ -1,0 +1,13 @@
+./
+battle/
+walksprites/
+tilesets/
+doodads/
+items/
+enemy_shadow.png
+testsprite_small.png
+testsprite2.png
+testsprite3.png
+index.txt
+testsprite.png
+enemy_alert.png

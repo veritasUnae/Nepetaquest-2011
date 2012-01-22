@@ -1,0 +1,9 @@
+#id:folder:health:attack:accuracy:name:color:special
+000:nepeta:100:15:80:Nepeta:5F841E:Weep:
+001:karkat:100:12:90:Karkat:626262:Raeg:
+002:equius:100:40:20:Equius:5167D8:STONGJUMP:
+003:gamzee:100:18:70:Gamzee:8C48BE:MiRaClE:
+004:eridan:100:12:90:Eridan:BC3BBC:Improvvise:
+005:vriska:100:13:88:Vriska:2A7FD4:Steal:
+010:robot1:50:5:95:NepetaBot:626262:Derp:
+199:crabdad:150:20:80:Crabdad:626262:Derp:

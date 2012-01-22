@@ -1,0 +1,4 @@
+./
+bg/
+field/
+index.txt

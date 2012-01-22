@@ -1,0 +1,16 @@
+./
+EridanHealth_1.png
+KarkatHealth_1.png
+NepetaHealthBar_1.png
+EquiusHealthBar_1.png
+index.txt
+GamzeeHealthBar_1.png
+GamzeeHealth_1.png
+EquiusHealth_1.png
+KarkatHealthBar_1.png
+VriskaHealth_1.png
+VriskaHealthBar_1.png
+EridanHealthBar_1.png
+NepetaHealth_1.png
+Thumbs.db
+selector.png

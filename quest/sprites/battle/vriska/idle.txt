@@ -1,0 +1,2 @@
+#width, height, xsep, ysep, xcount, fframes
+33:71:0:0:1:1

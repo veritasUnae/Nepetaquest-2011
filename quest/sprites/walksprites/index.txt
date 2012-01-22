@@ -1,0 +1,16 @@
+./
+animations/
+sollux.png
+gamzee.png
+terezi.png
+karkat.png
+crabdad.png
+screechbeast.png
+vriska.png
+index.txt
+leo.png
+nepeta.png
+equius.png
+eridan.png
+murdeer.png
+feferi.png

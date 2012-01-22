@@ -1,0 +1,4 @@
+./
+index.txt
+dialog.txt
+HealthBarFlash.png

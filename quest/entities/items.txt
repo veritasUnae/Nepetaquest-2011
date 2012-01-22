@@ -1,0 +1,24 @@
+item rock {
+	id:		001
+	type:	damage
+	use:	one
+	damage:	1
+	display:	Rock
+	sprite:	rock
+}
+item leaf { 
+	id:		002
+	type:	heal
+	use:	one
+	damage:	1
+	display:	Tasty Leaf
+	sprite:	leaf
+}
+item tea1 { 
+	id:		003
+	type:	heal
+	use:	5
+	damage:	2
+	display:	Purrl Grey Tea
+	sprite:	tea1
+}

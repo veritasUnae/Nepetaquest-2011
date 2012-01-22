@@ -1,0 +1,17 @@
+./
+sollux_move.png
+screechbeast_move.png
+karkat_move.png
+equius_move.png
+gamzee_move.png
+index.txt
+murdeer_move.png
+crabdad_screech.png
+vriska_move.png
+leo_move.png
+eridan_move.png
+terezi_move.png
+screechbeast_idle.png
+leo_idle.png
+feferi_move.png
+nepeta_move.png

@@ -1,0 +1,6 @@
+./
+rock/
+tea1/
+leaf/
+purrl_grey/
+index.txt

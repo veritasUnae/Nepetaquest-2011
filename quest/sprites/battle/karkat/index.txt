@@ -1,0 +1,11 @@
+./
+idle.txt
+health.txt
+idle.png
+index.txt
+health.png
+attack.png
+attack.txt
+bar.png
+Thumbs.db
+bar.txt
