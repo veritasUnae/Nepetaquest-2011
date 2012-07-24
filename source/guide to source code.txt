@@ -1,0 +1,51 @@
+===
+
+The game as a whole is based around "Modules". Each module represents a "method of execution"- for instance, BattleModule will be run during battles, FieldModule will be run when the player is wandering around the place, AnimationModule will run during cutscenes, etc. Each module is described by a class which derives from Module.
+
+The runnable class is called Game. It's mostly just in charge of module management. Only one module can be running at any one time; the current module is a member of Game, and Game exposes a function to replace the running module with a different one (eg, switching from FieldModule to BattleModule when a battle happens). Data is passed between modules using two classes called State and Whiteboard.
+
+---
+
+All of the above is "universal" code- both myself and Geekthras worked on it, so you can talk to him about it. Everything that follows is "field module" code- it was exclusively my responsibility. I'll do my best to explain it unambiguously.
+
+---
+
+The field module runs when the player is exploring the environment. In Final Fantasy terms, it's the equivalent of walking around a cave, or exploring a town. You can check out an example by downloading the demo and selecting- I think it's called "field test"?
+
+The most important field module class is Room. The player is always exploring exactly one room at any given point. If the player (say) walks through a doorway, or walks off the edge of the screen, they switch to a different Room.
+
+Each room is described by the following three things. You can get a good idea about how they work by playing with the room editor, and reading the room editor's documentation.
+
+A walkmap. This describes which parts of the room are walkable by Nepeta, which parts aren't, and which parts act as staircases.
+A tilemap. This describes how the room "looks". It's basically just a three-dimensional array of tiles drawn from a specific tileset.
+A series of room objects. These are what make the room interactive and interesting. Anything remotely interesting is some kind of room object.
+
+Room objects derive from the RObject class. RObject-derived classes have a location and size, they can be enabled and disabled, and they expose various event handler functions. The current room object classes are RDoodad, RGate, REnemy, and RNPC. Check out the room editor's documentation for the basics of how they work. You should be able to derive the rest by looking at the source code, I hope.
+
+Room objects are constant. It's impossible to create new ones except when a room is first loaded, and it's impossible to destroy them except when a room is unloaded. This was a deliberate design choice. Instead of "creating and destroying" RObjects, you "enable and disable" them. Disabled objects are not drawn and cannot influence the game in any way.
+
+The field module and room objects are scriptable using the FieldScript class. FieldScript is an interpreter for an extremely simple plaintext scripting language. I'll post a documentation later on, although most of it should be fairly obvious if you look at the FieldScript class.
+
+Each specific room is described by an .nqr file. This is a binary file that describes the walkmap, tilemap and room objects. It can be loaded, edited and saved by the room editor. Again, I'll clean up the file specification and post it later on.
+
+---
+
+A few minutiae that might not be entirely obvious at first glance.
+
+Player is... the player. It's pretty much the only "game object" that isn't an actual room object, so FieldModule contains a bunch of special cases to deal with it.
+
+Actor is the interface by which FieldScripts interact with NPCs, enemies, and the player. It exposes methods like "cause this actor to walk north for the next ten steps" or "play this animation". It had to be implemented separately in RNPC and Player (since fucking Java doesn't allow multiple inheritance), so you'll be seeing a certain amount of duplicate code between those two classes.
+
+SpriteBank is a resource manager that prevents unnecessary duplicate loading of sprites. All room objects load their resources using SpriteBank.
+
+DrawOp is a queue that accumulates drawing operations, and then draws an entire frame all at once. This is necessary for depth-ordering reasons. All room objects perform their rendering into a DrawOp.
+
+REnemy derives directly from RNPC, for several good reasons. You need to bear that in mind if the REnemy source is going to make the slightest bit of sense.
+
+---
+
+If it wasn't clear, the room editor itself is absolutely essential. The current room editor is written in C++, using the GTK+ UI library. It's kind of messy and undocumented, but it could conceivably be taken over by somebody else.
+
+Alternatively, given that you'll have access to the NQR file format, you could write a room editor of your own. It should be relatively straightforward. Or you could scrap the current shitty NQR format and replace it with something simpler. From experience, I'd recommend going with something XML-based, for extensibility reasons.
+
+-(Frost, 2011)
